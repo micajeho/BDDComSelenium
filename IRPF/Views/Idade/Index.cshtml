@@ -1,0 +1,18 @@
+﻿@model IRPF.Models.CalcularIdade
+@{
+    ViewBag.Title = "Index";
+}
+@using (Html.BeginForm())
+{
+    @Html.ValidationSummary(true)
+    <fieldset>
+        <legend>Valor do salário</legend>
+        @Html.TextBoxFor(model => model.DataNascimento)
+        <p>
+                <input type="submit" value="Calcular" />
+            </p>
+        
+        O resultado é
+        @Html.DisplayFor(model => model.Mensagem)
+    </fieldset>
+}

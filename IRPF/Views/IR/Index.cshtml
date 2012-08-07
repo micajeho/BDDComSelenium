@@ -1,0 +1,20 @@
+﻿@model IRPF.Models.Irpf
+@{
+    ViewBag.Title = "Calcular IRPF";
+}
+@using (Html.BeginForm())
+{
+    @Html.ValidationSummary(true)
+    <fieldset>
+        <legend>Valor do salário</legend>
+        @Html.TextBoxFor(model => model.Valor)
+        <p>
+            <legend>Quantidade de Dependentes</legend>
+            @Html.TextBoxFor(model => model.Dependente)
+            <p>
+                <input type="submit" value="Calcular" />
+            </p>
+        O resultado é
+        @Html.DisplayFor(model => model.Imposto)
+    </fieldset>
+}
